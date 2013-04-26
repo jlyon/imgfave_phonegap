@@ -10,7 +10,15 @@ var app = {
         // so we need to call app.report(), and not this.report()
         app.report('deviceready');
         //window.location="http://jeff.home.albatrossdemos.com";
-        window.location="http://jeff.work.albatrossdemos.com/new";
+        var networkState = checkConnection();
+ 
+        function onDeviceReady() {
+        if (networkState == Connection.NONE) {
+            navigator.notification.alert('This app requires an internet connection');
+        } else {
+            window.location = 'http://jeff.work.albatrossdemos.com/new';
+        }
+     }
     },
     report: function(id) { 
         console.log("report:" + id);
@@ -21,3 +29,19 @@ var app = {
     }
 
 };
+
+function checkConnection() {
+   var networkState = navigator.network.connection.type;
+   var states = {};
+   states[Connection.UNKNOWN]  = 'Unknown connection';
+   states[Connection.ETHERNET] = 'Ethernet connection';
+   states[Connection.WIFI]     = 'WiFi connection';
+   states[Connection.CELL_2G]  = 'Cell 2G connection';
+   states[Connection.CELL_3G]  = 'Cell 3G connection';
+   states[Connection.CELL_4G]  = 'Cell 4G connection';
+   states[Connection.NONE]     = 'No network connection';
+  
+   return networkState;
+  
+}
+
