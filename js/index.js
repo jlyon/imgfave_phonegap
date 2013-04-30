@@ -16,7 +16,7 @@ var app = {
         if (networkState == Connection.NONE) {
             navigator.notification.alert('This app requires an internet connection');
         } else {
-            window.location = 'http://jeff.work.albatrossdemos.com/new';
+            window.location = 'http://staging.imgfave.com';
         }
      }
     },
