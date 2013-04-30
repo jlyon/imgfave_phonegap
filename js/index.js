@@ -8,24 +8,16 @@ var app = {
     deviceready: function() {
         // note that this is an event handler so the scope is that of the event
         // so we need to call app.report(), and not this.report()
-        app.report('deviceready');
-        //window.location="http://jeff.home.albatrossdemos.com";
-        var networkState = checkConnection();
- 
-        function onDeviceReady() {
-        if (networkState == Connection.NONE) {
-            navigator.notification.alert('This app requires an internet connection');
-        } else {
-            window.location = 'http://staging.imgfave.com'; 
-        }
-     }
+        window.location = 'http://staging.imgfave.com'; 
     },
     report: function(id) { 
+        /*
         console.log("report:" + id);
         // hide the .pending <p> and show the .complete <p>
         document.querySelector('#' + id + ' .pending').className += ' hide';
         var completeElem = document.querySelector('#' + id + ' .complete');
         completeElem.className = completeElem.className.split('hide').join('');
+        */
     }
 
 };
