@@ -10,28 +10,36 @@ html {
 }
 
 body {
-    background-color:#A7A7A7;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-color:#1d9aa6;
+    background-image:linear-gradient(top, #1d9aa6 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #1d9aa6 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #1d9aa6 0%, #E4E4E4 51%);
     background-image:-webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
+        color-stop(0, #97CCD2),
+        color-stop(0.51, #ECF4F8)
     );
     display:table-cell;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    text-transform:uppercase;
     vertical-align:middle;
 }
 
 .app {
-    background-image:url(../img/cordova.png);
+    background-image:url(../img/logo.png);
     background-repeat:no-repeat;
+    background-position: center;
     margin:0px auto;
     width:275px;
+    text-align: center;
+}
+
+.app i.i-loading {
+    display: block;
+    height: 32px;
+    margin-top: 40px;
+    background: url(../img/loading.gif) center no-repeat;
 }
 
 h1 {
