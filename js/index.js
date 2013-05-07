@@ -5,16 +5,16 @@ var app = {
     bind: function() {
         //device ready
         document.addEventListener('deviceready', this.deviceready, false);
-        //internet offline
-        document.addEventListener('offline', this.deviceoffline, false);
     },
     deviceready: function() {
         // note that this is an event handler so the scope is that of the event
         // so we need to call app.report(), and not this.report()
+        document.addEventListener("offline", function() {
+            alert('offline');
+            window.location = 'offline.html';
+        }, false);
+
         window.location = 'http://staging.imgfave.com/albatrossdigital';
-    },
-    deviceoffline: function() {
-        window.location = 'offline.html';
     },
     report: function(id) {
         /*
