@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.example.imgfave" version="2.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.example.imgfave"
+    version="2.0.0"
+    versionCode="1"
+    xmlns="http://www.w3.org/ns/widgets"
+    xmlns:gap="http://phonegap.com/ns/1.0">
     <name>imgfave</name>
     <description>
         amazing and inspiring images
@@ -41,10 +45,11 @@
     <gap:splash gap:platform="ios" height="960" src="res/screen/iphone_retina_portrait.png" width="640" />
     <gap:splash gap:platform="winphone" height="800" src="res/screen/windows_phone_portrait.jpg" width="480" />
     <feature name="http://api.phonegap.com/1.0/device" />
-    <preference name="phonegap-version" value="1.9.0" />
+    <preference name="phonegap-version" value="2.5.0" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="false" />
+    <preference name="load-url-timeout" value="35000" />
     <access origin="*" />
     <access origin="http://imgfave.com" subdomains="true"/>
     <access origin="http://albatrossdemos.com" subdomains="true"/>
