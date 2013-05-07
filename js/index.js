@@ -3,14 +3,20 @@ var app = {
         this.bind();
     },
     bind: function() {
+        //device ready
         document.addEventListener('deviceready', this.deviceready, false);
+        //internet offline
+        document.addEventListener('offline', this.deviceoffline, false);
     },
     deviceready: function() {
         // note that this is an event handler so the scope is that of the event
         // so we need to call app.report(), and not this.report()
-        window.location = 'http://staging.imgfave.com/albatrossdigital'; 
+        window.location = 'http://staging.imgfave.com/albatrossdigital';
     },
-    report: function(id) { 
+    deviceoffline: function() {
+        window.location = 'offline.html';
+    },
+    report: function(id) {
         /*
         console.log("report:" + id);
         // hide the .pending <p> and show the .complete <p>
@@ -32,8 +38,8 @@ function checkConnection() {
    states[Connection.CELL_3G]  = 'Cell 3G connection';
    states[Connection.CELL_4G]  = 'Cell 4G connection';
    states[Connection.NONE]     = 'No network connection';
-  
+
    return networkState;
-  
+
 }
 
