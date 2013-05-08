@@ -1,3 +1,4 @@
+var ref;
 var app = {
     initialize: function() {
         this.bind();
@@ -19,7 +20,7 @@ var app = {
           window.location = 'offline.html';
         } else {
           navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
-          window.location = 'http://staging.imgfave.com';
+          ref = window.open('http://staging.imgfave.com', '_blank', 'location=yes');
         }
     },
     report: function(id) {
@@ -41,8 +42,7 @@ function toggleCon(e) {
     window.location = 'offline.html';
   } else {
     navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
-    window.location = 'http://staging.imgfave.com';
-
+    ref = window.open('http://staging.imgfave.com', '_blank', 'location=yes');
   }
 }
 
@@ -60,4 +60,10 @@ function checkConnection() {
    return networkState;
 
 }
+
+/*$('#aboutPage').live('pagecreate',function(event){
+  alert('This page was just enhanced by jQuery Mobile!');
+});*/
+
+
 
