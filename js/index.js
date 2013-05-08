@@ -20,7 +20,7 @@ var app = {
           window.location = 'offline.html';
         } else {
           navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
-          ref = window.open('http://staging.imgfave.com', '_blank', 'location=yes');
+          ref = window.open('http://staging.imgfave.com', '_self', 'location=yes');
         }
     },
     report: function(id) {
@@ -42,7 +42,7 @@ function toggleCon(e) {
     window.location = 'offline.html';
   } else {
     navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
-    ref = window.open('http://staging.imgfave.com', '_blank', 'location=yes');
+    ref = window.open('http://staging.imgfave.com', '_self', 'location=yes');
   }
 }
 
