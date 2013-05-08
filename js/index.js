@@ -11,11 +11,16 @@ var app = {
     deviceReady: function() {
         // note that this is an event handler so the scope is that of the event
         // so we need to call app.report(), and not this.report()
-        window.location = 'http://staging.imgfave.com/albatrossdigital';
-    },
-    deviceOffline: function() {
-        alert('offline');
-        window.location = 'offline.html';
+        document.addEventListener("online", toggleCon, false);
+        document.addEventListener("offline", toggleCon, false);
+
+        if(navigator.network.connection.type == Connection.NONE) {
+          navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
+          window.location = 'offline.html';
+        } else {
+          navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
+          window.location = 'http://staging.imgfave.com';
+        }
     },
     report: function(id) {
         /*
@@ -28,6 +33,18 @@ var app = {
     }
 
 };
+
+function toggleCon(e) {
+  console.log("Called",e.type);
+  if(e.type == "offline") {
+    navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
+    window.location = 'offline.html';
+  } else {
+    navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
+    window.location = 'http://staging.imgfave.com';
+
+  }
+}
 
 function checkConnection() {
    var networkState = navigator.network.connection.type;
