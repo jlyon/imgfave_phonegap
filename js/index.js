@@ -4,6 +4,7 @@ var app = {
         this.bind();
     },
     bind: function() {
+        //super.setIntegerProperty( 'main', R.drawable.imgfave );
         //device ready
         document.addEventListener('deviceready', this.deviceReady, false);
         //internet offline
@@ -12,6 +13,7 @@ var app = {
     deviceReady: function() {
         // note that this is an event handler so the scope is that of the event
         // so we need to call app.report(), and not this.report()
+        // /super.setIntegerProperty("splashscreen",  R.drawable.imgfave);
         document.addEventListener("online", toggleCon, false);
         document.addEventListener("offline", toggleCon, false);
 
@@ -20,7 +22,10 @@ var app = {
           window.location = 'offline.html';
         } else {
           navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
-          ref = window.open('http://staging.imgfave.com', '_self', 'location=yes');
+          //ref = window.open('http://staging.imgfave.com', '_self', 'location=yes');
+          //$('#webbrowser').window.open('http://staging.imgfave.com', '_self', 'location=yes');
+          document.getElementsByTagName('body')[0].className += ' contentloaded';
+          document.body.appendChild(getIframe('http://staging.imgfave.com'));
         }
     },
     report: function(id) {
@@ -42,7 +47,9 @@ function toggleCon(e) {
     window.location = 'offline.html';
   } else {
     navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
-    ref = window.open('http://staging.imgfave.com', '_self', 'location=yes');
+    // /ref = window.open('http://staging.imgfave.com', '_self', 'location=yes');
+    //$('#webbrowser').window.open('http://staging.imgfave.com', '_self', 'location=yes');
+    document.body.appendChild(getIframe('http://staging.imgfave.com'));
   }
 }
 
@@ -64,6 +71,14 @@ function checkConnection() {
 /*$('#aboutPage').live('pagecreate',function(event){
   alert('This page was just enhanced by jQuery Mobile!');
 });*/
+
+function getIframe(url) {
+  var iframe = document.createElement("iframe");
+  iframe.setAttribute('id', 'webbrowser');
+  iframe.setAttribute('scrolling', 'no');
+  iframe.setAttribute('src', url);
+  return iframe;
+}
 
 
 

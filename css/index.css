@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background-color:#1d9aa6;
+    /*background-color:#1d9aa6;
     background-image:linear-gradient(top, #1d9aa6 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #1d9aa6 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #1d9aa6 0%, #E4E4E4 51%);
@@ -20,20 +20,49 @@ body {
         left bottom,
         color-stop(0, #97CCD2),
         color-stop(0.51, #ECF4F8)
-    );
+    );*/
+    background-image:url(../img/background.png);
+    background-repeat:repeat;
+    background-position: center center;
     display:table-cell;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     vertical-align:middle;
 }
 
+#webbrowser {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+  border: 0;
+}
+
 .app {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  margin-top: -100px;
+  width: 100%;
+}
+
+.app .text {
+  margin-top: 20px;
+  margin-left: -18px;
+}
+
+/*.app {
     background-image:url(../img/logo.png);
     background-repeat:no-repeat;
-    background-position: center;
+    background-position: center center;
     margin:0px auto;
     width:275px;
     text-align: center;
-}
+}*/
 
 .app i.i-loading {
     display: block;
@@ -77,32 +106,32 @@ h1 {
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
+
 @-webkit-keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
+
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
 
 /* portrait */
-/* @media screen and (max-aspect-ratio: 1/1) */
+/* @media screen and (max-aspect-ratio: 1/1)
 .app {
     background-position:center top;
-    height:100px;              /* adds enough room for text */
-    padding:180px 0px 0px 0px; /* background height - shadow offset */
-}
+    height:100px;
+    padding:180px 0px 0px 0px;
+}*/
 
-/* lanscape (when wide enough) */
+/* lanscape (when wide enough)
 @media screen and (min-aspect-ratio: 1/1) and (min-width:445px) {
     .app {
         background-position:left center;
-        height:140px;       /* height + padding = background image size */
-        padding-left:170px; /* background width */
-        padding-top:60px;   /* center the text */
+        height:140px;
+        padding-left:170px;
+        padding-top:60px;
     }
-}
+}*/

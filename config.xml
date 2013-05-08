@@ -17,14 +17,14 @@
     <icon gap:platform="android" height="96" src="res/icon/imgfave_114.png" width="96" />
     <icon gap:platform="blackberry" height="80" src="res/icon/cordova_bb_80.png" width="80" />
     <icon gap:platform="ios" height="144" src="res/icon/cordova_ios_144.png" width="144" />
-    <gap:splash gap:platform="android" height="480" src="res/screen/splash.png" width="800" />
-    <gap:splash gap:platform="android" height="800" src="res/screen/splash.png" width="480" />
-    <gap:splash gap:platform="android" height="200" src="res/screen/splash.png" width="320" />
-    <gap:splash gap:platform="android" height="320" src="res/screen/splash.png" width="200" />
-    <gap:splash gap:platform="android" height="320" src="res/screen/splash.png" width="480" />
-    <gap:splash gap:platform="android" height="480" src="res/screen/splash.png" width="320" />
-    <gap:splash gap:platform="android" height="720" src="res/screen/splash.png" width="1280" />
-    <gap:splash gap:platform="android" height="1280" src="res/screen/splash.png" width="720" />
+    <gap:splash gap:platform="android" height="480" src="res/screen/splash-landscape.png" width="800" />
+    <gap:splash gap:platform="android" height="800" src="res/screen/splash-portrait.png" width="480" />
+    <gap:splash gap:platform="android" height="200" src="res/screen/splash-landscape.png" width="320" />
+    <gap:splash gap:platform="android" height="320" src="res/screen/splash-portrait.png" width="200" />
+    <gap:splash gap:platform="android" height="320" src="res/screen/splash-landscape.png" width="480" />
+    <gap:splash gap:platform="android" height="480" src="res/screen/splash-portrait.png" width="320" />
+    <gap:splash gap:platform="android" height="720" src="res/screen/splash-landscape.png" width="1280" />
+    <gap:splash gap:platform="android" height="1280" src="res/screen/splash-portrait.png" width="720" />
     <!--<gap:splash gap:platform="android" height="480" src="res/screen/android_hdpi_landscape.png" width="800" />
     <gap:splash gap:platform="android" height="800" src="res/screen/android_hdpi_portrait.png" width="480" />
     <gap:splash gap:platform="android" height="200" src="res/screen/android_ldpi_landscape.png" width="320" />
