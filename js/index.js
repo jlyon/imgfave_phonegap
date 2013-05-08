@@ -75,7 +75,7 @@ function checkConnection() {
 function getIframe(url) {
   var iframe = document.createElement("iframe");
   iframe.setAttribute('id', 'webbrowser');
-  iframe.setAttribute('scrolling', 'no');
+  //iframe.setAttribute('scrolling', 'no');
   iframe.setAttribute('src', url);
   return iframe;
 }
