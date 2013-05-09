@@ -8,7 +8,7 @@ var app = {
         //device ready
         document.addEventListener('deviceready', this.deviceReady, false);
         //internet offline
-        document.addEventListener('offline', this.deviceOffline, false);
+        //document.addEventListener('offline', this.deviceOffline, false);
     },
     deviceReady: function() {
         // note that this is an event handler so the scope is that of the event
@@ -49,7 +49,8 @@ function toggleCon(e) {
     navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
     // /ref = window.open('http://staging.imgfave.com', '_self', 'location=yes');
     //$('#webbrowser').window.open('http://staging.imgfave.com', '_self', 'location=yes');
-    document.body.appendChild(getIframe('http://staging.imgfave.com'));
+    window.location = 'main.html';
+    //document.body.appendChild(getIframe('http://staging.imgfave.com'));
   }
 }
 
