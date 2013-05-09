@@ -25,7 +25,9 @@ var app = {
           //ref = window.open('http://staging.imgfave.com', '_self', 'location=yes');
           //$('#webbrowser').window.open('http://staging.imgfave.com', '_self', 'location=yes');
           document.getElementsByTagName('body')[0].className += ' contentloaded';
-          document.body.appendChild(getIframe('http://staging.imgfave.com'));
+          window.plugins.childBrowser.showWebPage('http://m.staging.imgfave.com', { showLocationBar: true });
+          //document.body.appendChild(getIframe('http://m.staging.imgfave.com'));
+          //console.log("http://m.staging.imgfave.com");
         }
     },
     report: function(id) {
