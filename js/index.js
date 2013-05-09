@@ -18,14 +18,15 @@ var app = {
         document.addEventListener("offline", toggleCon, false);
 
         if(navigator.network.connection.type == Connection.NONE) {
-          navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
+          navigator.notification.alert("Sorry, you are offline 1.", function() {}, "Offline!");
+          window.plugins.childBrowser.close();
           window.location = 'offline.html';
         } else {
           navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
           //ref = window.open('http://staging.imgfave.com', '_self', 'location=yes');
           //$('#webbrowser').window.open('http://staging.imgfave.com', '_self', 'location=yes');
           document.getElementsByTagName('body')[0].className += ' contentloaded';
-          window.plugins.childBrowser.showWebPage('http://m.staging.imgfave.com', { showLocationBar: false });
+          window.plugins.childBrowser.showWebPage('http://m.staging.imgfave.com', { showNavigationBar: false });
           //document.body.appendChild(getIframe('http://m.staging.imgfave.com'));
           //console.log("http://m.staging.imgfave.com");
         }
@@ -45,7 +46,8 @@ var app = {
 function toggleCon(e) {
   console.log("Called",e.type);
   if(e.type == "offline") {
-    navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
+    navigator.notification.alert("Sorry, you are offline 2.", function() {}, "Offline!");
+    window.plugins.childBrowser.close();
     window.location = 'offline.html';
   } else {
     navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
