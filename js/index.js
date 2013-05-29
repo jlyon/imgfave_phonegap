@@ -17,9 +17,10 @@ var app = {
         // /super.setIntegerProperty("splashscreen",  R.drawable.imgfave);
         document.addEventListener("online", toggleCon, false);
         document.addEventListener("offline", toggleCon, false);
+        document.addEventListener("backbutton", onBackKeyDown, false);
 
         if(navigator.network.connection.type == Connection.NONE) {
-          navigator.notification.alert("Sorry, you are offline 1.", function() {}, "Offline!");
+          navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
           //window.plugins.childBrowser.close();
           window.location = 'offline.html';
         } else {
@@ -56,12 +57,17 @@ function toggleCon(e) {
     //window.plugins.childBrowser.close();
     window.location = 'offline.html';
   } else {
-    navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
+    navigator.notification.alert("Woot, you are back online 2.", function() {}, "Online!");
     // /ref = window.open('http://staging.imgfave.com', '_self', 'location=yes');
     //$('#webbrowser').window.open('http://staging.imgfave.com', '_self', 'location=yes');
     window.location = 'main.html';
     //document.body.appendChild(getIframe('http://staging.imgfave.com'));
   }
+}
+
+function onBackKeyDown(e) {
+  navigator.notification.alert("Called " + e.type, function() {}, "Offline!");
+  e.preventDefault();
 }
 
 function checkConnection() {
